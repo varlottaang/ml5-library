@@ -18,11 +18,11 @@ The ml5 library includes [a list of supported SketchRNN models](https://github.c
 
 ```js
 // Create a new SketchRNN Instance
-const model = ml5.sketchRNN("cat", modelReady);
+const model = ml5.sketchRNN('cat', modelReady);
 
 // When the model is loaded
 function modelReady() {
-  console.log("SketchRNN Model Loaded!");
+  console.log('SketchRNN Model Loaded!');
 }
 // Reset the model's current stat
 model.reset();
@@ -40,7 +40,7 @@ function gotSketch(err, result) {
 ### Initialize
 
 ```js
-const sketchrnn = ml5.sketchRNN(model, ?callback)
+const sketchrnn = ml5.sketchRNN(model, ?callback);
 ```
 
 #### Parameters
@@ -63,7 +63,7 @@ const sketchrnn = ml5.sketchRNN(model, ?callback)
 > Reset the model's current state
 
 ```js
-sketchrnn.reset()
+sketchrnn.reset();
 ```
 
 📥 **Inputs**
@@ -79,14 +79,14 @@ sketchrnn.reset()
 
 
 <!-- /////////////////////
-FUNCTION DEFINITION START 
+FUNCTION DEFINITION START
 ///////////////////////// -->
 ***
 #### .generate()
 > Generates a new sample with the current state.
 
 ```js
-sketchrnn.generate(?seed, ?options, ?callback)
+sketchrnn.generate(?seed, ?options, ?callback);
 ```
 
 📥 **Inputs**
@@ -107,16 +107,16 @@ sketchrnn.generate(?seed, ?options, ?callback)
 ## Examples
 
 **p5.js**
-* [SketchRNN_basic](https://github.com/ml5js/ml5-examples/tree/development/p5js/SketchRNN/SketchRNN_basic)
-* [SketchRNN_interactive](https://github.com/ml5js/ml5-examples/tree/development/p5js/SketchRNN/SketchRNN_interactive)
+* [SketchRNN_basic](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/SketchRNN/SketchRNN_basic)
+* [SketchRNN_interactive](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/SketchRNN/SketchRNN_interactive)
 
 **p5 web editor**
 * [SketchRNN_basic](https://editor.p5js.org/ml5/sketches/SketchRNN_basic)
 * [SketchRNN_interactive](https://editor.p5js.org/ml5/sketches/SketchRNN_interactive)
 
 **plain javascript**
-* [SketchRNN_basic](https://github.com/ml5js/ml5-examples/tree/development/javascript/SketchRNN/_basic)
-* [SketchRNN_interactive](https://github.com/ml5js/ml5-examples/tree/development/javascript/SketchRNN/SketchRNN_interactive)
+* [SketchRNN_basic](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/SketchRNN/_basic)
+* [SketchRNN_interactive](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/SketchRNN/SketchRNN_interactive)
 
 
 ## Demo
@@ -142,4 +142,3 @@ No tutorials yet - contribute one today!
 ## Source Code
 
 * [/src/SketchRNN/](https://github.com/ml5js/ml5-library/tree/development/src/SketchRNN)
-

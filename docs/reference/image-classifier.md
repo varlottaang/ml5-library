@@ -7,11 +7,11 @@
 
 
 ## Description
-You can use neural networks to recognize the content of images. ml5.imageClassifier() is a method to create an object that classifies an image using a pre-trained model.
+You can use neural networks to recognize the content of images. `ml5.imageClassifier()` is a method to create an object that classifies an image using a pre-trained model.
 
 It should be noted that the pre-trained model provided by the example below was trained on a database of approximately 15 million images (ImageNet). The ml5 library accesses this model from the cloud. What the algorithm labels an image is entirely dependent on that training data -- what is included, excluded, and how those images are labeled (or mislabeled).
 
-**Train your own image classification model with Teachable Machine**: If you'd like to train your own custom image classification model, try [Google's Teachable Machine - coming soon!](https://teachablemachine.withgoogle.com/io19)
+**Train your own image classification model with Teachable Machine**: If you'd like to train your own custom image classification model, try [Google's Teachable Machine](https://teachablemachine.withgoogle.com/io19).
 
 ## Quickstart
 
@@ -25,7 +25,7 @@ function modelLoaded() {
 }
 
 // Make a prediction with a selected image
-classifier.classify(document.getElementById('image'), function(err, results) {
+classifier.classify(document.getElementById('image'), (err, results) => {
   console.log(results);
 });
 ```
@@ -36,37 +36,37 @@ classifier.classify(document.getElementById('image'), function(err, results) {
 ### Initialize
 
 ```js
-const classifier = ml5.imageClassifier(model, ?video, ?options, ?callback)
+const classifier = ml5.imageClassifier(model, ?video, ?options, ?callback);
 ```
 
 #### Parameters
 * **model**: REQUIRED. A String value of a valid model OR a url to a model.json that contains a pre-trained model. Case insensitive. Models available are: 'MobileNet', 'Darknet' and 'Darknet-tiny','DoodleNet', or any image classification model trained in Teachable Machine. Below are some examples of creating a new image classifier:
   * `mobilenet`:
     ```js
-    const classifier = ml5.imageClassifier('MobileNet', modelReady)
-    ``` 
+    const classifier = ml5.imageClassifier('MobileNet', modelReady);
+    ```
   * `Darknet`:
     ```js
-    const classifier = ml5.imageClassifier('Darknet', modelReady)
-    ``` 
+    const classifier = ml5.imageClassifier('Darknet', modelReady);
+    ```
   * `DoodleNet`:
     ```js
-    const classifier = ml5.imageClassifier('DoodleNet', modelReady)
-    ``` 
+    const classifier = ml5.imageClassifier('DoodleNet', modelReady);
+    ```
   * Custom Model from Teachable Machine:
     ```js
-    const classifier = ml5.imageClassifier('path/to/custom/model.json', modelReady)
-    ``` 
+    const classifier = ml5.imageClassifier('path/to/custom/model.json', modelReady);
+    ```
 * **video**: OPTIONAL. An HTMLVideoElement
 * **callback**: OPTIONAL. A function to run once the model has been loaded. If no callback is provided, it will return a promise that will be resolved once the model has loaded.
 * **options**: OPTIONAL. An object to change the defaults (shown below). The available options are:
-    ```
-    { 
-      version: 1, 
-      alpha: 1.0, 
-      topk: 3 
-    }
-    ```
+  ```js
+  {
+    version: 1,
+    alpha: 1.0,
+    topk: 3,
+  };
+  ```
 
 ### Properties
 
@@ -100,12 +100,12 @@ const classifier = ml5.imageClassifier(model, ?video, ?options, ?callback)
 
 If you DID NOT specify an image or video in the constructor...
 ```js
-classifier.classify(input, ?numberOfClasses,?callback)
+classifier.classify(input, ?numberOfClasses, ?callback);
 ```
 
 If you DID specify an image or video in the constructor...
 ```js
-classifier.classify(?numberOfClasses ,?callback)
+classifier.classify(?numberOfClasses , ?callback);
 ```
 
 📥 **Inputs**
@@ -124,16 +124,16 @@ classifier.classify(?numberOfClasses ,?callback)
 ## Examples
 
 **p5.js**
-* [ImageClassification](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification)
-* [ImageClassification_DoodleNet_Canvas](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_DoodleNet_Canvas)
-* [ImageClassification_DoodleNet_Video](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_DoodleNet_Video)
-* [ImageClassification_MultipleImages](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_MultipleImages)
-* [ImageClassification_Teachable-Machine](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_Teachable-Machine)
-* [ImageClassification_Video](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_Video)
-* [ImageClassification_VideoScavengerHunt](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_VideoScavengerHunt)
-* [ImageClassification_VideoSound](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_VideoSound)
-* [ImageClassification_VideoSoundTranslate](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_VideoSoundTranslate)
-* [ImageClassification_Video_Load](https://github.com/ml5js/ml5-examples/tree/development/p5js/ImageClassification/ImageClassification_Video_Load)
+* [ImageClassification](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification)
+* [ImageClassification_DoodleNet_Canvas](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_DoodleNet_Canvas)
+* [ImageClassification_DoodleNet_Video](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_DoodleNet_Video)
+* [ImageClassification_MultipleImages](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_MultipleImages)
+* [ImageClassification_Teachable-Machine](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_Teachable-Machine)
+* [ImageClassification_Video](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_Video)
+* [ImageClassification_VideoScavengerHunt](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_VideoScavengerHunt)
+* [ImageClassification_VideoSound](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_VideoSound)
+* [ImageClassification_VideoSoundTranslate](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_VideoSoundTranslate)
+* [ImageClassification_Video_Load](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/ImageClassification/ImageClassification_Video_Load)
 
 **p5.js Web Editor**
 
@@ -148,15 +148,15 @@ classifier.classify(?numberOfClasses ,?callback)
 * [ImageClassification_VideoSoundTranslate](https://editor.p5js.org/ml5/sketches/ImageClassification_VideoSoundTranslate)
 
 **plain javascript**
-* [ImageClassification](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification)
-* [ImageClassification_DoodleNet_Canvas](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_DoodleNet_Canvas)
-* [ImageClassification_DoodleNet_Video](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_DoodleNet_Video)
-* [ImageClassification_MultipleImages](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_MultipleImages)
-* [ImageClassification_Video](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_Video)
-* [ImageClassification_VideoScavengerHunt](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_VideoScavengerHunt)
-* [ImageClassification_VideoSound](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_VideoSound)
-* [ImageClassification_VideoSoundTranslate](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_VideoSoundTranslate)
-* [ImageClassification_Video_Load](https://github.com/ml5js/ml5-examples/tree/development/javascript/ImageClassification/ImageClassification_Video_Load)
+* [ImageClassification](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification)
+* [ImageClassification_DoodleNet_Canvas](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_DoodleNet_Canvas)
+* [ImageClassification_DoodleNet_Video](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_DoodleNet_Video)
+* [ImageClassification_MultipleImages](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_MultipleImages)
+* [ImageClassification_Video](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_Video)
+* [ImageClassification_VideoScavengerHunt](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_VideoScavengerHunt)
+* [ImageClassification_VideoSound](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_VideoSound)
+* [ImageClassification_VideoSoundTranslate](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_VideoSoundTranslate)
+* [ImageClassification_Video_Load](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/ImageClassification/ImageClassification_Video_Load)
 
 ## Demo
 

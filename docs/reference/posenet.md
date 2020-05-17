@@ -13,22 +13,22 @@ PoseNet is a machine learning model that allows for Real-time Human Pose Estimat
 
 PoseNet can be used to estimate either a single pose or multiple poses, meaning there is a version of the algorithm that can detect only one person in an image/video and one version that can detect multiple persons in an image/video.
 
-The original PoseNet model was ported to TensorFlow.js by Dan Oved. Check out his blog post.
+The original PoseNet model was ported to TensorFlow.js by Dan Oved. For background, read [Real-time Human Pose Estimation in the Browser with TensorFlow.js](https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5).
 
 ## Quickstart
 
 ```js
-const video = document.getElementById("video");
+const video = document.getElementById('video');
 
 // Create a new poseNet method
 const poseNet = ml5.poseNet(video, modelLoaded);
 
 // When the model is loaded
 function modelLoaded() {
-  console.log("Model Loaded!");
+  console.log('Model Loaded!');
 }
 // Listen to new 'pose' events
-poseNet.on("pose", function(results) {
+poseNet.on('pose', (results) => {
   poses = results;
 });
 ```
@@ -37,7 +37,7 @@ poseNet.on("pose", function(results) {
 ## Usage
 
 ### Initialize
-There are a couple ways to initialize `ml5.poseNet`. 
+There are a couple ways to initialize `ml5.poseNet`.
 ```js
 // Initialize with video, type and callback
 const poseNet = ml5.poseNet(?video, ?type, ?callback);
@@ -52,23 +52,23 @@ const poseNet = ml5.poseNet(?callback, ?options);
 * **type**: OPTIONAL. A String value to run `single` or `multiple` estimation. Changes the `detectionType` property of the options. Default is `multiple`.
 * **callback**: OPTIONAL. A function that is called when the model is loaded.
 * **options**: OPTIONAL. A object that contains properties that effect the posenet model accuracy, results, etc.
-  
-    ```
-    {
-      architecture: 'MobileNetV1',
-      imageScaleFactor: 0.3,
-      outputStride: 16,
-      flipHorizontal: false,
-      minConfidence: 0.5,
-      maxPoseDetections: 5,
-      scoreThreshold: 0.5,
-      nmsRadius: 20,
-      detectionType: 'multiple',
-      inputResolution: 513,
-      multiplier: 0.75,
-      quantBytes: 2
-    }
-    ```
+
+  ```js
+  {
+    architecture: 'MobileNetV1',
+    imageScaleFactor: 0.3,
+    outputStride: 16,
+    flipHorizontal: false,
+    minConfidence: 0.5,
+    maxPoseDetections: 5,
+    scoreThreshold: 0.5,
+    nmsRadius: 20,
+    detectionType: 'multiple',
+    inputResolution: 513,
+    multiplier: 0.75,
+    quantBytes: 2,
+  };
+  ```
 
 ### Properties
 
@@ -79,7 +79,7 @@ const poseNet = ml5.poseNet(?callback, ?options);
 
 ***
 #### .video
-> The optional video added to the 
+> The optional video added to the
 ***
 
 ***
@@ -146,23 +146,23 @@ const poseNet = ml5.poseNet(?callback, ?options);
 > An event listener that returns the results when a pose is detected. You can use this with `.singlePose()` or `.multiPose()` or just listen for poses if you pass in a `video` into the constructor.
 
 ```js
-poseNet.on('pose', callback)
+poseNet.on('pose', callback);
 ```
 
 📥 **Inputs**
 
 * **callback**: REQUIRED.  A callback function to handle the results when a pose is detected. For example.
 
-    ```js
-    poseNet.on('pose', function(results) { 
-      // do something with the results
-      console.log(results);
-    })
-    ```
+```js
+poseNet.on('pose', (results) => {
+  // do something with the results
+  console.log(results);
+});
+```
 
 📤 **Outputs**
 
-* **Array**: Returns an array of objects. See documentation for `.singlePose()` and `.multiPose`
+* **Array**: Returns an array of objects. See documentation for `.singlePose()` and `.multiPose()`
 
 ***
 
@@ -172,7 +172,7 @@ poseNet.on('pose', callback)
 > Given a number, will make magicSparkles
 
 ```js
-poseNet.singlePose(?input)
+poseNet.singlePose(?input);
 ```
 
 📥 **Inputs**
@@ -183,19 +183,19 @@ poseNet.singlePose(?input)
 
 * **Array**: Returns an array of objects. A sample is included below.
 
-    ```
-    [
-      {
-        pose: {
-          keypoints: [{position:{x,y}, score, part}, ...],
-          leftAngle:{x, y, confidence},
-          leftEar:{x, y, confidence},
-          leftElbow:{x, y, confidence},
-          ...
-        }
-      }
-    ]
-    ```
+  ```js
+  [
+    {
+      pose: {
+        keypoints: [{ position: { x, y }, score, part }, ...],
+        leftAngle: { x, y, confidence },
+        leftEar: { x, y, confidence },
+        leftElbow: { x, y, confidence },
+        ...
+      },
+    },
+  ];
+  ```
 ***
 
 ***
@@ -203,7 +203,7 @@ poseNet.singlePose(?input)
 > Given a number, will make magicSparkles
 
 ```js
-poseNet.multiPose(?input)
+poseNet.multiPose(?input);
 ```
 
 📥 **Inputs**
@@ -214,37 +214,37 @@ poseNet.multiPose(?input)
 
 * **Array**: Returns an array of objects. A sample is included below.
 
-    ```
-    [
-      {
-        pose: {
-          keypoints: [{position:{x,y}, score, part}, ...],
-          leftAngle:{x, y, confidence},
-          leftEar:{x, y, confidence},
-          leftElbow:{x, y, confidence},
-          ...
-        }
+  ```js
+  [
+    {
+      pose: {
+        keypoints: [{ position: { x, y }, score, part }, ...],
+        leftAngle: { x, y, confidence },
+        leftEar: { x, y, confidence },
+        leftElbow: { x, y, confidence },
+        ...
       },
-      {
-        pose: {
-          keypoints: [{position:{x,y}, score, part}, ...],
-          leftAngle:{x, y, confidence},
-          leftEar:{x, y, confidence},
-          leftElbow:{x, y, confidence},
-          ...
-        }
-      }
-    ]
-    ```
+    },
+    {
+      pose: {
+        keypoints: [{ position: { x, y }, score, part }, ...],
+        leftAngle: { x, y, confidence },
+        leftEar: { x, y, confidence },
+        leftElbow: { x, y, confidence },
+        ...
+      },
+    },
+  ];
+  ```
 ***
 
 
 ## Examples
 
 **p5.js**
-* [PoseNet_image_single](https://github.com/ml5js/ml5-examples/tree/development/p5js/PoseNet/PoseNet_image_single)
-* [PoseNet_part_selection](https://github.com/ml5js/ml5-examples/tree/development/p5js/PoseNet/PoseNet_part_selection)
-* [PoseNet_webcam](https://github.com/ml5js/ml5-examples/tree/development/p5js/PoseNet/PoseNet_webcam)
+* [PoseNet_image_single](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/PoseNet/PoseNet_image_single)
+* [PoseNet_part_selection](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/PoseNet/PoseNet_part_selection)
+* [PoseNet_webcam](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/PoseNet/PoseNet_webcam)
 
 **p5 web editor**
 * [PoseNet_image_single](https://editor.p5js.org/ml5/sketches/PoseNet_image_single)
@@ -252,9 +252,9 @@ poseNet.multiPose(?input)
 * [PoseNet_webcam](https://editor.p5js.org/ml5/sketches/PoseNet_webcam)
 
 **plain javascript**
-* [PoseNet_image_single](https://github.com/ml5js/ml5-examples/tree/development/javascript/PoseNet/PoseNet_image_single)
-* [PoseNet_part_selection](https://github.com/ml5js/ml5-examples/tree/development/javascript/PoseNet/PoseNet_part_selection)
-* [PoseNet_webcam](https://github.com/ml5js/ml5-examples/tree/development/javascript/PoseNet/PoseNet_webcam)
+* [PoseNet_image_single](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/PoseNet/PoseNet_image_single)
+* [PoseNet_part_selection](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/PoseNet/PoseNet_part_selection)
+* [PoseNet_webcam](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/PoseNet/PoseNet_webcam)
 
 ## Demo
 
@@ -262,8 +262,8 @@ No demos yet - contribute one today!
 
 ## Tutorials
 
-### PoseNet featured on Hour of Code via CodingTrain
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EA3-k9mnLHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+### PoseNet on The Coding Train
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OIo-DIOkNVg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Acknowledgements

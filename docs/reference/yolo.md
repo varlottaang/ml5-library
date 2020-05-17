@@ -8,6 +8,8 @@
 
 ## Description
 
+Note: the YOLO module is being deprecated, please refer to the [ObjectDetector](object-detector.md) module.
+
 You only look once ([YOLO](https://pjreddie.com/darknet/yolo/)) is a state-of-the-art, real-time object detection system.
 
 From the [creators](https://pjreddie.com/darknet/yolo/) website:
@@ -21,18 +23,18 @@ This implementation is heavily derived from [ModelDepot](https://github.com/Mode
 ## Quickstart
 
 ```js
-const video = document.getElementById("video");
+const video = document.getElementById('video');
 
 // Create a YOLO method
 const yolo = ml5.YOLO(video, modelLoaded);
 
 // When the model is loaded
 function modelLoaded() {
-  console.log("Model Loaded!");
+  console.log('Model Loaded!');
 }
 
 // Detect objects in the video element
-yolo.detect(function(err, results) {
+yolo.detect((err, results) => {
   console.log(results); // Will output bounding boxes of detected objects
 });
 ```
@@ -81,9 +83,7 @@ const yolo = ml5.YOLO(?options, ?callback)
 > Given an image or video, returns an array of objects containing class names, bounding boxes and probabilities.
 
 ```js
-yolo.detect(input, ?callback)
-// OR
-yolo.detect(?callback)
+yolo.detect(?input, ?callback);
 ```
 
 📥 **Inputs**
@@ -102,16 +102,16 @@ yolo.detect(?callback)
 
 
 **p5.js**
-* [YOLO_single_image](https://github.com/ml5js/ml5-examples/tree/development/p5js/YOLO/YOLO_single_image)
-* [YOLO_webcam](https://github.com/ml5js/ml5-examples/tree/development/p5js/YOLO/YOLO_webcam)
+* [YOLO_single_image](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/YOLO/YOLO_single_image)
+* [YOLO_webcam](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/YOLO/YOLO_webcam)
 
 **p5 web editor**
 * [YOLO_single_image](https://editor.p5js.org/ml5/sketches/YOLO_single_image)
 * [YOLO_webcam](https://editor.p5js.org/ml5/sketches/YOLO_webcam)
 
 **plain javascript**
-* [YOLO_single_image](https://github.com/ml5js/ml5-examples/tree/development/javascript/YOLO/YOLO_single_image)
-* [YOLO_webcam](https://github.com/ml5js/ml5-examples/tree/development/javascript/YOLO/YOLO_webcam)
+* [YOLO_single_image](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/YOLO/YOLO_single_image)
+* [YOLO_webcam](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/YOLO/YOLO_webcam)
 
 ## Demo
 

@@ -21,15 +21,15 @@ This version is heavily based on [Christopher Hesse TensorFlow.js implementation
 
 ```js
 // Create a pix2pix model using a pre trained network
-const pix2pix = ml5.pix2pix("models/customModel.pict", modelLoaded);
+const pix2pix = ml5.pix2pix('models/customModel.pict', modelLoaded);
 
 // When the model is loaded
 function modelLoaded() {
-  console.log("Model Loaded!");
+  console.log('Model Loaded!');
 }
 
 // Transfer using a canvas
-pix2pix.transfer(canvas, function(err, result) {
+pix2pix.transfer(canvas, (err, result) => {
   console.log(result);
 });
 ```
@@ -64,7 +64,7 @@ const styleTransfer = ml5.pix2pix(model, ?callback);
 > Given an canvas element, applies image-to-image translation using the provided model. Returns an image.
 
 ```js
-styleTransfer.transfer(canvas, ?callback)
+styleTransfer.transfer(canvas, ?callback);
 ```
 
 📥 **Inputs**
@@ -83,16 +83,16 @@ styleTransfer.transfer(canvas, ?callback)
 
 
 **p5.js**
-* [Pix2Pix_callback](https://github.com/ml5js/ml5-examples/tree/development/p5js/Pix2Pix/Pix2Pix_callback)
-* [Pix2Pix_promise](https://github.com/ml5js/ml5-examples/tree/development/p5js/Pix2Pix/Pix2Pix_promise)
+* [Pix2Pix_callback](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/Pix2Pix/Pix2Pix_callback)
+* [Pix2Pix_promise](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/Pix2Pix/Pix2Pix_promise)
 
 **p5 web editor**
 * [Pix2Pix_callback](https://editor.p5js.org/ml5/sketches/Pix2Pix_callback)
 * [Pix2Pix_promise](https://editor.p5js.org/ml5/sketches/Pix2Pix_promise)
 
 **plain javascript**
-* [Pix2Pix_callback](https://github.com/ml5js/ml5-examples/tree/development/javascript/Pix2Pix/Pix2Pix_callback)
-* [Pix2Pix_promise](https://github.com/ml5js/ml5-examples/tree/development/javascript/Pix2Pix/Pix2Pix_promise)
+* [Pix2Pix_callback](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/Pix2Pix/Pix2Pix_callback)
+* [Pix2Pix_promise](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/Pix2Pix/Pix2Pix_promise)
 
 
 ## Demo

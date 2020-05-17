@@ -18,18 +18,18 @@ At present ml5.js only supports the CREPE model. This model is a direct port of 
 const audioContext = new AudioContext();
 // const MicStream = MicStream
 const pitch = ml5.pitchDetection(
-  "./model/",
+  './model/',
   audioContext,
   MicStream,
-  modelLoaded
+  modelLoaded,
 );
 
 // When the model is loaded
 function modelLoaded() {
-  console.log("Model Loaded!");
+  console.log('Model Loaded!');
 }
 
-pitch.getPitch(function(err, frequency) {
+pitch.getPitch((err, frequency) => {
   console.log(frequency);
 });
 ```
@@ -87,7 +87,7 @@ const detector = ml5.pitchDetection(model, audioContext, stream, callback);
 > gets the pitch.
 
 ```js
-detector.getPitch(?callback)
+detector.getPitch(?callback);
 ```
 
 📥 **Inputs**
@@ -104,9 +104,9 @@ detector.getPitch(?callback)
 ## Examples
 
 **p5.js**
-* [PitchDetection](https://github.com/ml5js/ml5-examples/tree/development/p5js/PitchDetection/PitchDetection)
-* [PitchDetection_Game](https://github.com/ml5js/ml5-examples/tree/development/p5js/PitchDetection/PitchDetection_Game)
-* [PitchDetection_Piano](https://github.com/ml5js/ml5-examples/tree/development/p5js/PitchDetection/PitchDetection_Piano)
+* [PitchDetection](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/PitchDetection/PitchDetection)
+* [PitchDetection_Game](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/PitchDetection/PitchDetection_Game)
+* [PitchDetection_Piano](https://github.com/ml5js/ml5-library/tree/development/examples/p5js/PitchDetection/PitchDetection_Piano)
 
 **p5 web editor**
 * [PitchDetection](https://editor.p5js.org/ml5/sketches/PitchDetection)
@@ -114,9 +114,9 @@ detector.getPitch(?callback)
 * [PitchDetection_Piano](https://editor.p5js.org/ml5/sketches/PitchDetection_Piano)
 
 **plain javascript**
-* [PitchDetection](https://github.com/ml5js/ml5-examples/tree/development/javascript/PitchDetection/PitchDetection)
-* [PitchDetection_Game](https://github.com/ml5js/ml5-examples/tree/development/javascript/PitchDetection/PitchDetection_Game)
-* [PitchDetection_Piano](https://github.com/ml5js/ml5-examples/tree/development/javascript/PitchDetection/PitchDetection_Piano)
+* [PitchDetection](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/PitchDetection/PitchDetection)
+* [PitchDetection_Game](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/PitchDetection/PitchDetection_Game)
+* [PitchDetection_Piano](https://github.com/ml5js/ml5-library/tree/development/examples/javascript/PitchDetection/PitchDetection_Piano)
 
 ## Demo
 

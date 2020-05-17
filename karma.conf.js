@@ -2,12 +2,16 @@
 module.exports = (config) => {
   config.set({
     client: {
-      model: config.model
+      model: config.model,
+      jasmine:{
+        random:false
+      }
     },
     frameworks: ['jasmine'],
     files: [
       'src/index.js',
       `src/${config.model ? config.model : '**'}/*_test.js`,
+      `src/${config.model ? config.model : '**'}/**/*_test.js`,
     ],
     preprocessors: {
       'src/index.js': ['webpack'],
@@ -63,7 +67,7 @@ module.exports = (config) => {
         browser: 'chrome',
         browser_version: 'latest',
         os: 'OS X',
-        os_version: 'High Sierra'
+        os_version: 'Mojave'
       },
     },
     reporters: ['mocha'],
@@ -73,6 +77,6 @@ module.exports = (config) => {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
   });
 };
